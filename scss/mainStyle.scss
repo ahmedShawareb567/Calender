@@ -1,0 +1,250 @@
+@mixin  all(){
+    padding: 0rem;
+    margin: 0rem;
+    box-sizing: border-box;
+    -o-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+/*ALL COLORS*/
+$mainColor: #252020;
+$yellow: #fff591;
+$red: #fa26a0;
+$green: #a3f7bf;
+
+/*FONT NAME*/
+$font: 'Poppins', sans-serif;
+
+/*THE SAME FONT*/
+@mixin  poFont($size, $weight) {
+    font-family: $font;
+    font-size: $size;
+    font-weight: $weight;
+}
+/*AVOID SELECTION*/
+@mixin selectAv() {
+    user-select: none;
+    -o-user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+}
+/*RADIUS ELEMENTS*/
+@mixin eRadius($r) {
+    border-radius: $r;
+    -o-border-radius: $r;
+    -moz-border-radius: $r;
+    -webkit-border-radius: $r;
+}
+
+/*MAIKIGN TRANSITION*/
+@mixin transElement($prop, $seconds, $type){
+    transition: $prop $seconds $type;
+    -o-transition: $prop $seconds $type;
+    -moz-transition: $prop $seconds $type;
+    -webkit-transition: $prop $seconds $type;
+}
+
+/*ALL SECTION STYLE*/
+@mixin secStyle(){
+    position: relative;
+    width :100%;
+    height: auto;
+    background-color: transparent;
+}
+
+/*UL MAIN STYLE*/
+ul{
+    padding: 0rem;
+    margin: 0rem;
+    list-style: none;
+}
+
+/*HTML STYLE*/
+html{
+    font: normal 1rem sans-serif;
+}
+body{
+    @include all();
+}
+p{
+    color: $green;
+    font-size:5rem;
+}
+.calender-section{
+    @include secStyle();
+    .calender-content{
+        position: relative;
+        .calender-icon{
+            position: relative;
+            width: 3rem;
+            height: 3rem;
+            margin: 0rem auto 0rem auto;
+        p{
+            display: inline-block;
+            cursor: pointer;
+            i{
+                display: block;
+                font-size: 1rem;
+                width: 3rem;
+                height: 3rem;
+                background-color: $yellow;
+                text-align: center;
+                line-height: 3rem;
+                color: $mainColor;
+                @include eRadius(50%);
+            }
+        }
+        
+     .calender-content-child{
+        position: absolute;
+        padding: 1rem 0rem;
+        width: 20rem;
+        height: 19rem;
+        top: .5rem;
+        left: .5rem;
+        transform-origin: top;
+        transform: scaleY(0);
+        background-color: #fff;
+        box-shadow: .2rem .2rem 1rem .5rem rgba(0,0,0, .02);
+        @include transElement(all, .1s , ease-in-out );
+        @include eRadius(1rem);
+        .title{
+            @include secStyle();
+            display: flex;
+            height: 3rem;
+            .arrow-left{
+                width: 20%;
+                text-align: center;
+                p{
+                    display :inline-block;
+                    line-height: 0;
+                    margin: 0rem;
+                    i{
+                        display: inline-block;
+                        font-size: 1.2rem;
+                        color: rgba(0,0,0, .4);
+                        background-color: transparent;
+                    }
+                }
+            }
+            .content{
+                width: 60%;
+                text-align: center;
+                p{
+                    display :inline-block;
+                    line-height: 3rem;
+                    color: $mainColor;
+                    @include poFont(1rem, 600 );
+                    margin: 0rem;
+                }
+            }
+            .arrow-right{
+                width: 20%;
+                width: 20%;
+                text-align: center;
+                p{
+                    display :inline-block;
+                    margin: 0rem;
+                    line-height: 0;
+                    i{
+                        display: inline-block;
+                        font-size: 1.2rem;
+                        color: rgba(0,0,0, .4);
+                        background-color: transparent;
+                    }
+                }
+            }
+        }
+        .content-ul-li{
+            @include secStyle();
+            text-align: center;
+            padding: 1rem;
+            @include selectAv();
+            table{
+                display :table;
+                width: 100%;
+                max-width: 100%;
+                cursor: pointer;
+                thead{
+                    position: relative;
+                    width: 100%;
+                    background-color: rgba(0,0,0,0);
+                    tr{
+                        width: 100%;
+                        text-align: center;
+                        th{
+                            @include poFont(.8rem, 500 );
+                            padding: .2rem;
+                            color: $green;
+                        }
+                    }
+                }
+                tbody{
+                    tr{
+                        td{
+                            @include poFont(.7rem, 600 );
+                            padding: .3rem 0rem;
+                            @include eRadius(.5rem);
+                            @include transElement(all, .1s , ease-in-out );
+                            &:hover{
+                                background-color: $yellow;
+                            }
+                            &.td-active{
+                                background-color: $yellow;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+            .time{
+                @include secStyle();
+                display: flex;
+                padding: 0rem 1rem;
+                .number{
+                    width: 40%;
+                    text-align: center;
+                    input[type="number"]{
+                        display: inline-block;
+                        border: none;
+                        outline: none;
+                        &::-webkit-inner-spin-button,
+                        &::-webkit-outer-spin-button{
+                            opacity: 1;
+                        }
+                    }
+                }
+                .am-pm{
+                    width :40%;
+                    text-align: center;
+                    select{
+                        display :inline-block;
+                        border: none;
+                        outline: none;
+                    }
+                }
+                .set-date-time{
+                    width :20%;
+                    text-align: center;
+                    cursor: pointer;
+                    span{
+                        display :inline-block;
+                        @include poFont(.7rem , 400 );
+                        color: $mainColor;
+                        width: 2rem;
+                        height: 2rem;
+                        line-height :2rem;
+                        background-color: $yellow;
+                        @include eRadius(50%);
+                    }
+                }
+            }
+            &.calender-active{
+                transform:scaleY(1);
+            }
+        }
+    }
+    }
+}
+/*ENDING*/

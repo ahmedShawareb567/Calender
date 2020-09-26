@@ -1,0 +1,25 @@
+@media (max-width: 991px) {
+    .headerSections header nav .popupButtonsSec ul li i{
+        padding :.5rem 1rem;
+    }
+    .chartSection .canvas-content, .chartSection .topCommentsSection, .chartSection .share-state-section{
+        margin-bottom :2rem;
+    }
+}
+@media (max-width: 767px) {
+    header nav .popupButtonsSec ul li.menu-active .drop-menu{
+        width :12rem;
+        left: -3rem;
+    }
+}
+
+@media (max-width: 576px) {
+    header nav .popupButtonsSec ul li.menu-active .drop-menu{
+        width :12rem;
+        right :1rem;
+        left: auto;
+    }
+    .chartSection .canvas-content{
+        height :15rem;
+    }
+}

@@ -1,0 +1,86 @@
+<!Doctype html>
+<html>
+    <head>
+        <title>Social Coding main Page</title>
+        <meta charset="utf-8">
+        <meta name="descriptin" content="">
+        <meta name="keywords" content="">
+        <meta name="author" content="ahmed shawareb">
+        <!--STYLSHEET-->
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="scss/fontello.css">
+        <link rel="stylesheet" href="scss/bootstrap.min.css">
+        <link rel="stylesheet" href="scss/Chart.min.css">
+        <link rel="stylesheet" href="scss/mainStyle.css">
+        <link rel="stylesheet" href="scss/media-query.css">
+        <!--FAVICON-->
+        <link rel="icon" href="">
+    </head>
+    <body>
+        <section class="calender-section">
+            <div class="calender-content">
+                <div class="calender-icon">
+                    <p>
+                        <i class="icon icon-calendar-empty"></i>
+                    </p>
+                    <div class="calender-content-child">
+                        <div class="title">
+                            <div class="arrow-left">
+                                <p>
+                                    <i class="icon icon-left-open-mini"></i>
+                                </p>
+                            </div>
+                            <div class="content">
+                                <p>Januaray</p>
+                            </div>
+                            <div class="arrow-right">
+                             <p>
+                                 <i class="icon icon-right-open-mini"></i>
+                             </p>
+                         </div>
+                        </div> 
+                        <div class="content-ul-li">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>SAT</th>
+                                        <th>SUN</th>
+                                        <th>MON</th>
+                                        <th>TUE</th>
+                                        <th>WEN</th>
+                                        <th>SAR</th>
+                                        <th>FRI</th>
+                                    </tr>
+                                </thead>
+                                <tr style="height: .5rem; width: 100%;"></tr>
+                            </table>
+                        </div>
+                        <div class="time">
+                            <div class="number">
+                                <input type="number" min="1" max="12" step="1" value="1" id="hourInput">
+                            </div>
+                            <div class="am-pm">
+                                <select name="am-pm" id="getAmPm">
+                                    <option value="am">am</option>
+                                    <option value="pm">pm</option>
+                                </select>
+                            </div>
+                            <div class="set-date-time">
+                                <span>
+                                    <i class="icon icon-right-big"></i>
+                                </span>
+                            </div>
+                        </div>
+                     </div>
+                </div>
+            </div>
+            <input type="hidden" value="null" id="result-input" name="dateTime">
+        </section>
+        <script src="js/jquery.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/Chart.min.js"></script>
+        <script src="js/circle-progress.min.js"></script>
+        <script src="js/popper.js"></script>
+        <script src="js/mainJs.js"></script>
+    </body>
+</html>
